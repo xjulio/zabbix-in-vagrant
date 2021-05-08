@@ -65,7 +65,7 @@ zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zab
 sed -i 's/^# DBPassword=.*/DBPassword=zabbixPW/g' /etc/zabbix/zabbix_server.conf
 
 # Configure Zabbix TZ 
-sed -i "s|.*php_value\[date\.timezone\].*|php_value\[date\.timezone\] = ${ZABBIX_TZ}|g" /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf && cat /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+sed -i "s|.*php_value\[date\.timezone\].*|php_value\[date\.timezone\] = ${ZABBIX_TZ}|g" /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
 
 # Start Zabbix server and agent processes
 systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm
