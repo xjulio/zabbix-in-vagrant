@@ -1,6 +1,6 @@
 
 # Zabbix Demo in Vagrant
-Demo project x to create demo environment using Vagrant
+Project to create Zabbix demo environment using Vagrant
 
 # Requirements
 * Virtualbox: https://www.virtualbox.org/wiki/Downloads
