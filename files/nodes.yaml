@@ -1,0 +1,21 @@
+---
+#- name: zabbix
+#  box: centos/7
+#  ip: 192.168.33.5
+#  memory: 2048
+#  bootstrap: scripts/bootstrap-master-mysql.sh
+- name: zabbixpg
+  box: centos/7
+  ip: 192.168.33.5
+  memory: 2048
+  bootstrap: scripts/bootstrap-master-pgsql.sh
+- name: node01
+  box: centos/7
+  ip: 192.168.33.10
+  memory: 512
+  bootstrap: scripts/bootstrap-node.sh
+- name: node02
+  box: centos/7
+  ip: 192.168.33.20
+  memory: 512
+  bootstrap: scripts/bootstrap-node.sh
