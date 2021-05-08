@@ -44,7 +44,7 @@ mysql -e "grant all privileges on zabbix.* to zabbix@localhost;"
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql zabbix
 
 # Configure the database for Zabbix server
-sed -i 's/^# DBPassword=.*/DBPassword=zabbixPW/g' /etc/zabbix/zabbix_server.conf
+sed -i "s|.*DBPassword=.*|DBPassword=${ZABBIX_PW}|g" /etc/zabbix/zabbix_server.conf
 
 # Configure Zabbix TZ 
 sed -i "s|.*php_value\[date\.timezone\].*|php_value\[date\.timezone\] = ${ZABBIX_TZ}|g" /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
